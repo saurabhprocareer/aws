@@ -1,0 +1,22 @@
+AWS Lambda
+
+1. With AWS Lambda, you can run code without provisioning or managing servers. 
+You pay only for the compute time that you consume—there's no charge when your code isn't running.
+
+2. The Lambda function handler is the method in your function code that processes events. 
+When your function is invoked, Lambda runs the handler method. Your function runs until the handler returns a response, exits, or times out.
+
+3. You can use the following general syntax when creating a function handler in Python:
+
+
+ def handler_name(event, context): 
+    ...
+    return some_value    
+
+
+4. Key Take Aways.
+
+	•	All Lambda functions must have a Handler function
+	•	Handler functions must accept 2 (and only 2) arguments:
+	•	event: The data from the event that triggered the function
+	•	context: The data about the execution environment of the function

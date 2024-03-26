@@ -1,0 +1,21 @@
+# Testing the Lambda function locally
+if __name__ == '__main__':
+    # Sample event data
+    event = {
+        'name': 'John',
+        'age': 30
+    }   
+    # Invoking the Lambda function locally
+    # def lambda_handler(event, None)   
+    # # Printing the result
+    # print(result)
+import json
+def lambda_handler(event, context):
+    # TODO implement
+    print(event)
+    return {
+        'statusCode': 200,
+        'body': json.dumps(event)
+    }
+
+lambda_handler(event,None)

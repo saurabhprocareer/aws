@@ -1,0 +1,45 @@
+Example 1:::
+
+import json
+
+def lambda_handler(event, context):
+    # Print the event
+    print("Event:")
+    print(json.dumps(event, indent=4))
+    
+    # Print the context
+    print("Context:")
+    print(context)
+
+    # Return a response if needed
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Event and Context printed successfully!')
+    }
+
+Example 2::: 
+
+import json
+
+def lambda_handler(event, context):
+    # Check if "key1" exists in the event
+    if "key1" in event:
+        # Check if the value of "key1" is equal to 1
+        if event["key1"] == "1":
+            status_code = 500
+        else:
+            status_code = 200
+        # Print the value associated with "key1"
+        print("Value of key1:", event["key1"])
+    else:
+        print("Key1 not found in the event.")
+
+    # Print the context
+    print("Context:")
+    print(context)
+
+    # Return a response
+    return {
+        'statusCode': status_code,
+        'body': json.dumps('Event and Context printed successfully!')
+    }
